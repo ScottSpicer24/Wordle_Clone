@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 5%;
+}
+
+.guess-box{
+    width: auto;
+}
+
+.wrong{
+    background-color: red !important;
+    text-align: center;
+}
+
+.partial{
+    background-color: goldenrod !important;
+    text-align: center;
+}
+
+.correct{
+    background-color: green !important;
+    text-align: center;
+}
+
+.open{
+    background-color: skyblue !important;
+    text-align: center;
+}

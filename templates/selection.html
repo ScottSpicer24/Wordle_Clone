@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Selection
+{% endblock %}
+
+{% block main %}
+    <div class="col"></div>
+    <div class="col btn-group">
+        <a class='btn btn-success mx-auto' href="{{ url_for('fiveLetter') }}">5</a>
+        <a class='btn btn-warning mx-auto' href="{{ url_for('sixLetter') }}">6</a>
+        <a class='btn btn-secondary mx-auto' href="{{ url_for('sevenLetter') }}">7</a>
+    </div>
+    <div class="col"></div>
+{% endblock %}

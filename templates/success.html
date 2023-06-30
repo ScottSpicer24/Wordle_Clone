@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title %}
+    You win!
+{% endblock %}
+
+{% block main %}
+    <h1>YOU WIN!!!</h1>
+    <h4>you found the word {{ real_word }}</h4>
+    <p>select letter amount to play again</p>
+    <div class="col btn-group">
+        <a class='btn btn-success mx-auto' href="{{ url_for('fiveLetter') }}">5</a>
+        <a class='btn btn-warning mx-auto' href="{{ url_for('sixLetter') }}">6</a>
+        <a class='btn btn-secondary mx-auto' href="{{ url_for('sevenLetter') }}">7</a>
+    </div>
+{% endblock %}

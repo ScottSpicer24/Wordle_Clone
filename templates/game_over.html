@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %}
+    title
+{% endblock %}
+
+{% block main %}
+    <div class="col"></div>
+    <div class="col">
+        <h2>You lost lozer</h2>
+        <h4>the word was: {{ real_word }}</h4>
+        <div class="col btn-group">
+            <a class='btn btn-success mx-auto' href="{{ url_for('fiveLetter') }}">5</a>
+            <a class='btn btn-warning mx-auto' href="{{ url_for('sixLetter') }}">6</a>
+            <a class='btn btn-secondary mx-auto' href="{{ url_for('sevenLetter') }}">7</a>
+        </div>
+    </div>
+    <div class="col"></div>
+{% endblock %}

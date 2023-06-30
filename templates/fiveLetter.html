@@ -1,0 +1,71 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Wordle Five
+{% endblock %}
+
+{% block main %}
+    <div class="col"></div>
+    <div class="col-6">
+        <div class="row">
+            <table class="table table-bordered">
+                {% for itter in guess %}
+                {% set outer_loop = loop %}
+                    <tr>
+                        {% for letter in itter %}
+                        {% set inner_loop = loop %}
+                            {% if guess_code[outer_loop.index0][inner_loop.index0] == 2 %}
+                                <td class="correct">
+                                    {{ letter }}
+                                </td>
+                            {% elif guess_code[outer_loop.index0][inner_loop.index0] == 1 %}
+                                <td class="partial">
+                                    {{ letter }}
+                                </td>
+                            {% else %}
+                                <td class="wrong">
+                                    {{ letter }}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    {% for key, value in letters.items() %}
+                        {% if value == 3 %}
+                            <td class = "open">
+                                {{ key }}
+                            </td>
+                        {% elif value == 2 %}
+                            <td class = "correct">
+                                {{ key }}
+                            </td>
+                        {% elif value == 1 %}
+                            <td class = "partial">
+                                {{ key }}
+                            </td>
+                        {% else %}
+                            <td class = "wrong">
+                                {{ key }}
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <form action="/fiveLetter" method="POST">
+                <div class="row" style="padding-left: 33%;">
+                    <input class="guess-box" type="text" name="guess" placeholder="Guess">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col"></div>
+
+
+{% endblock %}
