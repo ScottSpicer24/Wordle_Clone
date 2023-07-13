@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block title %}
+    You win!
+{% endblock %}
+
+{% block main %}
+    <div class="d-grid gap-2 col-6 mx-auto" style="text-align: center; padding-bottom:20px;">
+        <h1 style="color:orange;">Beware</h1>
+        <p>
+            You will start at 3 letters and if you succeed in finding the word 
+            you will go to a 4 letters word, then 5, 6, 7, and finally an 8 letter word. 
+            you will have 6 guesses per round. Good luck!
+        </p>
+    </div>
+    <form action="/gaun_info" method="post">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input class="btn btn-info" type="submit" name="start" value="start" placeholder="Start"/>
+        </div>
+    </form>
+{% endblock %}

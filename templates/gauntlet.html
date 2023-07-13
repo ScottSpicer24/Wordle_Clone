@@ -1,14 +1,19 @@
 {% extends "index.html" %}
 
 {% block title %}
-    Wordle Seven 
+    Wordle
 {% endblock %}
 
 {% block main %}
     <div class="col"></div>
     <div class="col-6">
+        <div class="row" style="text-align:center; padding-bottom: 20px">
+            <h5>Letter Amount: {{ letter_amnt }}</h5>
+            <h5>Guesses Left: {{ guesses_left }}</h5>
+            <h5>Rounds Survived: {{ rounds_survived }}</h5>
+        </div>
         <div class="row">
-            <table>
+            <table class="table table-bordered">
                 {% for itter in guess %}
                 {% set outer_loop = loop %}
                     <tr>
@@ -58,9 +63,9 @@
             </table>
         </div>
         <div class="row">
-            <form action="/sevenLetter" method="POST">
+            <form action="/gauntlet" method="POST">
                 <div class="row" style="padding-left: 33%;">
-                    <input class="guess-box" type="text" name="guess" placeholder="Guess">
+                    <input class="guess-box" type="text" name="guess" placeholder="Guess" autofocus>
                 </div>
             </form>
         </div>

@@ -5,12 +5,20 @@
 {% endblock %}
 
 {% block main %}
-    <h1>YOU WIN!!!</h1>
-    <h4>you found the word {{ real_word }}</h4>
-    <p>select letter amount to play again</p>
-    <div class="col btn-group">
-        <a class='btn btn-success mx-auto' href="{{ url_for('fiveLetter') }}">5</a>
-        <a class='btn btn-warning mx-auto' href="{{ url_for('sixLetter') }}">6</a>
-        <a class='btn btn-secondary mx-auto' href="{{ url_for('sevenLetter') }}">7</a>
+    <div class="d-grid gap-2 col-6 mx-auto" style="text-align: center; padding-bottom:20px;">
+        <h1 style="color:rgb(40, 170, 40);">YOU WIN!!!</h1>
+        <h4>You found the word {{ real_word }}!</h4>
+        <p>select letter amount to play again</p>
     </div>
+    <form action="/selection" method="post">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input class="btn btn-outline-dark" type="submit" name="letter_amnt" value="3" placeholder="3"/>
+            <input class="btn btn-info" type="submit" name="letter_amnt" value="4" placeholder="4"/>
+            <input class="btn btn-primary" type="submit" name="letter_amnt" value="5" placeholder="5"/>
+            <input class="btn btn-success" type="submit" name="letter_amnt" value="6" placeholder="6"/>
+            <input class="btn btn-warning" type="submit" name="letter_amnt" value="7" placeholder="7"/>
+            <input class="btn btn-danger" type="submit" name="letter_amnt" value="8" placeholder="8"/>
+            <input class="btn btn-dark" type="submit" name="letter_amnt" value="Guantlet" placeholder="Gauntlet"/>
+        </div>
+    </form>
 {% endblock %}
